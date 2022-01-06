@@ -1,0 +1,8 @@
+.NavLogo {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+}

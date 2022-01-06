@@ -1,0 +1,43 @@
+.footer_container {
+  background: rgb(115, 0, 255);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.footer_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+  margin-left: 60px;
+}
+.footer_column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 60px;
+}
+.footer_link {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.footer_link :hover {
+  color: black;
+  transition: 200ms ease-in;
+  cursor: pointer;
+}
+.footer_header {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
