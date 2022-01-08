@@ -9,25 +9,24 @@ function Footer() {
           <div className={classes.footer_column}>
             <h1 className={classes.footer_header}>About Project</h1>
             <div className={classes.footer_link}>
-              <i className="fab fa-facebook-f">Readme</i>
+              <span>Readme</span>
             </div>
             <div className={classes.footer_link}>
-              <i className="fab fa-facebook-f">Technologies</i>
+              <span>Technologies</span>
             </div>
           </div>
-          <div className={classes.footer_column}>
-            <h1 className={classes.footer_header}>Social Media</h1>
-            <div className={classes.footer_link}>
-              <i className="fab fa-facebook-f">facebook</i>
+          <div className={classes.icon_container}>
+            <div className={classes.footer_icon}>
+              <i class="fab fa-facebook-square"></i>
             </div>
-            <div className={classes.footer_link}>
-              <i className="fab fa-instagram">instagram</i>
+            <div className={classes.footer_icon}>
+              <i class="fab fa-instagram-square"></i>
             </div>
-            <div className={classes.footer_link}>
-              <i className="fab fa-twitter">twitter</i>
+            <div className={classes.footer_icon}>
+              <i class="fab fa-twitter-square"></i>
             </div>
-            <div className={classes.footer_link}>
-              <i className="fab fa-youtube">youtube</i>
+            <div className={classes.footer_icon}>
+              <i class="fab fa-linkedin"></i>
             </div>
           </div>
         </div>

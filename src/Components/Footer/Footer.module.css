@@ -1,8 +1,12 @@
 .footer_container {
-  background: rgb(115, 0, 255);
-  position: absolute;
+  background-color: white;
+  position: fixed;
+  z-index: 999;
   bottom: 0;
+  left: 0;
   width: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  box-shadow: 0px 1px 10px rgb(118, 116, 116);
 }
 .footer_box {
   display: flex;
@@ -25,19 +29,34 @@
   margin-left: 60px;
 }
 .footer_link {
-  color: #fff;
   margin-bottom: 10px;
   font-size: 20px;
   text-decoration: none;
+  font-weight: 300;
+}
+.icon_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer_icon {
+  color: rgb(36, 36, 36);
+  font-size: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.footer_icon :hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
 }
 .footer_link :hover {
-  color: black;
-  transition: 200ms ease-in;
+  color: rgb(33, 32, 32);
+  transform: scale(1.5);
   cursor: pointer;
 }
 .footer_header {
   font-size: 24px;
-  color: #fff;
   margin-bottom: 20px;
   font-weight: bold;
 }

@@ -1,0 +1,7 @@
+.navbar {
+  background-color: white;
+  font-family: "Josefin Sans", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}

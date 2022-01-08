@@ -1,17 +1,12 @@
-import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import Home from "./Components/Pages/Home/Home";
 
 function App() {
   return (
     <div className="site-wrapper">
       <Navbar></Navbar>
-      <div className="site-section-container">
-        <div className="section-1"></div>
-        <div className="section-2"></div>
-        <div className="section-3"></div>
-        <div className="section-4"></div>
-      </div>
+      <Home></Home>
       <Footer></Footer>
     </div>
   );

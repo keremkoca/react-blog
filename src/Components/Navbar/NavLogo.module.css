@@ -1,8 +1,8 @@
 .NavLogo {
   display: flex;
+  flex: 3;
   justify-content: center;
   cursor: pointer;
-  color: #fff;
   font-size: 2rem;
   text-decoration: none;
 }
