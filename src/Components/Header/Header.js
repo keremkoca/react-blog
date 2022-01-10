@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./Header.module.css";
 import HeaderItem from "./HeaderItem";
-import newsImg from "/Users/emir/Desktop/blog-app/src/Assets/news_img.jpeg";
 function Header() {
   return (
     <div className={classes.container}>
