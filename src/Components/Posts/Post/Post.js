@@ -9,12 +9,24 @@ function Post() {
         <img alt="userImg" src={postImg}></img>
       </div>
       <div className={classes.post_info}>
-        <h1 className={classes.post_header}>THIS IS A POST</h1>
+        <h3 className={classes.post_title}>This is a Post about something</h3>
         <div className={classes.post_user_info}>
-          <img className={classes.post_user_img} alt="userImg" src={logo}></img>
-          <div className={classes.post_date}>1 hour ago</div>
+          <div className={classes.post_details}>
+            <img
+              className={classes.post_user_img}
+              alt="userImg"
+              src={logo}
+            ></img>
+            <div className={classes.post_date}>1 hour ago</div>
+          </div>
           <div className={classes.post_description}>
             <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+              ipsum tortor, sollicitudin non felis convallis, placerat sagittis
+              risus. Aliquam erat volutpat. Proin suscipit pretium accumsan.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+              ipsum tortor, sollicitudin non felis convallis, placerat sagittis
+              risus. Aliquam erat volutpat. Proin suscipit pretium accumsan.
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               ipsum tortor, sollicitudin non felis convallis, placerat sagittis
               risus. Aliquam erat volutpat. Proin suscipit pretium accumsan.

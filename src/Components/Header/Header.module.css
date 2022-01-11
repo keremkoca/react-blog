@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  padding-top: 20px;
+  background-color: rgb(244, 239, 239);
 }
 .header_container_left {
   display: flex;
