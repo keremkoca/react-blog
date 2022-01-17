@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Home.module.css";
-import Header from "../../Header/Header";
-import Posts from "../../Posts/Posts";
+import Header from "../../Components/Header/Header";
+import Posts from "../../Components/Posts/Posts";
 function Home() {
   return (
     <div className={classes.container}>

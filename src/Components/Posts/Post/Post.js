@@ -4,22 +4,22 @@ import postImg from "../../../Assets/news_img.jpeg";
 import logo from "../../../Assets/Logo.jpeg";
 function Post() {
   return (
-    <div className={classes.post_container}>
-      <div className={classes.post_img}>
+    <div className={classes.container}>
+      <div className={classes.postImg}>
         <img alt="userImg" src={postImg}></img>
       </div>
-      <div className={classes.post_info}>
+      <div className={classes.postInfo}>
         <h3 className={classes.post_title}>This is a Post about something</h3>
-        <div className={classes.post_user_info}>
+        <div className={classes.userInfo}>
           <div className={classes.post_details}>
             <img
-              className={classes.post_user_img}
+              className={classes.user_img}
               alt="userImg"
               src={logo}
             ></img>
-            <div className={classes.post_date}>1 hour ago</div>
+            <div className={classes.postDate}>1 hour ago</div>
           </div>
-          <div className={classes.post_description}>
+          <div className={classes.postDescription}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               ipsum tortor, sollicitudin non felis convallis, placerat sagittis

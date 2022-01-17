@@ -1,4 +1,4 @@
-.post_container {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,27 +7,27 @@
   margin-bottom: 20px;
   margin-right: 10px;
 }
-.post_info {
+.postInfo {
   display: flex;
   flex-direction: column;
 }
-.post_img {
+.postImg {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.post_img img {
+.postImg img {
   border-radius: 3px;
   width: 300px;
   height: 200px;
 }
-.post_user_img {
+.user_img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   object-fit: cover;
 }
-.post_date {
+.postDate {
   margin-left: 10px;
 }
 .post_details {
@@ -37,7 +37,7 @@
   align-items: center;
   width: 100%;
 }
-.post_user_info {
+.userInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +48,7 @@
   font-family: "Josefin Sans", sans-serif;
   cursor: pointer;
 }
-.post_description {
+.postDescription {
   font-family: "Varela Round", sans-serif;
   font-size: 14px;
   color: #444;
