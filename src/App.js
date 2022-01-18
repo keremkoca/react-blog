@@ -1,13 +1,11 @@
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
-import Home from "./Pages/Home/Home";
-import PostDetail from "./Pages/PostDetail/PostDetail";
-
+import Write from "./Pages/Write/Write";
 function App() {
   return (
     <div className="site-wrapper">
       <Navbar></Navbar>
-      <PostDetail></PostDetail>
+      <Write></Write>
       <Footer></Footer>
     </div>
   );
