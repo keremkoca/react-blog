@@ -1,11 +1,12 @@
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
-import Write from "./Pages/Write/Write";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
 function App() {
   return (
     <div className="site-wrapper">
       <Navbar></Navbar>
-      <Write></Write>
+      <Login></Login>
       <Footer></Footer>
     </div>
   );

@@ -9,7 +9,7 @@ function SinglePost() {
         <h1 className={classes.post_title}>This is a Detailed Post</h1>
         <div className={classes.infoContainer}>
           <div className={classes.postInfo}>
-            <span className={classes.post_username}>Author : DassakKebabi</span>
+            <span className={classes.post_username}>Author : Admin</span>
             <span className={classes.post_date}>1 hour ago</span>
           </div>
           <div className={classes.postEdit}>

@@ -1,0 +1,72 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding-top: 40px;
+  position: relative;
+  height: 600px;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.59);
+  width: 400px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 350px;
+}
+.login form input {
+  height: 2rem;
+  font-size: 1.5rem;
+}
+.login form input:focus {
+  outline: none;
+}
+.login form label {
+  margin: 10px 0;
+  font-size: 20px;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: 10px 30px;
+  margin: 20px 0 0 10px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  background-color: rgba(93, 218, 93, 0.708);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(42, 109, 83, 0.619);
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+}
+
+.button:active {
+  transform: scale(0.9);
+  transition: all 0.2s ease-in-out;
+}
+.button:focus {
+  outline: none;
+}
+.Link {
+  margin-top: 10px;
+}
+.error {
+  color: red;
+}
