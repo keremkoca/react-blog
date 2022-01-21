@@ -1,5 +1,6 @@
 import classes from "./Login.module.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -14,7 +15,7 @@ function Login() {
             LOGIN
           </button>
         </form>
-        <span to="/register">Dont have account?Sign up</span>
+        <Link to="/register">Dont have account?Sign up</Link>
       </div>
     </div>
   );

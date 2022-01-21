@@ -1,5 +1,6 @@
 import classes from "./Register.module.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Register() {
   return (
@@ -19,7 +20,7 @@ function Register() {
             Create Account
           </button>
         </form>
-        <span to="/login">Already have an account?Sign in</span>
+        <Link to="/login">Already have an account?Sign in</Link>
       </div>
     </div>
   );

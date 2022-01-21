@@ -17,16 +17,16 @@ function Footer() {
           </div>
           <div className={classes.icon_container}>
             <div className={classes.footer_icon}>
-              <i class="fab fa-facebook-square"></i>
+              <i className="fab fa-facebook-square"></i>
             </div>
             <div className={classes.footer_icon}>
-              <i class="fab fa-instagram-square"></i>
+              <i className="fab fa-instagram-square"></i>
             </div>
             <div className={classes.footer_icon}>
-              <i class="fab fa-twitter-square"></i>
+              <i className="fab fa-twitter-square"></i>
             </div>
             <div className={classes.footer_icon}>
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
             </div>
           </div>
         </div>

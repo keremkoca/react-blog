@@ -5,3 +5,10 @@
   top: 0;
   z-index: 999;
 }
+.link {
+  text-decoration: none;
+}
+.link:visited {
+  text-decoration: none;
+  color: inherit;
+}
