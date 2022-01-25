@@ -16,23 +16,23 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.59);
   width: 400px;
 }
-.register h2 {
+.h2 {
   margin: 0;
 }
-.register form {
+.form {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   width: 350px;
 }
-.register form input {
+.field {
   height: 2rem;
   font-size: 1.5rem;
 }
-.register form input:focus {
+.field:focus {
   outline: none;
 }
-.register form label {
+.label {
   padding-top: 5px;
   padding-bottom: 5px;
 }

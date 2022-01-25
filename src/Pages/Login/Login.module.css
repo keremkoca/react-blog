@@ -18,20 +18,20 @@
   width: 400px;
 }
 
-.login form {
+.form {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   width: 350px;
 }
-.login form input {
+.field {
   height: 2rem;
   font-size: 1.5rem;
 }
-.login form input:focus {
+.field:focus {
   outline: none;
 }
-.login form label {
+.label {
   margin: 10px 0;
   font-size: 20px;
 }
