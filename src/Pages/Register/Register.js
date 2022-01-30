@@ -2,7 +2,19 @@ import classes from "./Register.module.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import axios from "axios";
 
+const handleSubmit = (values) => {
+  const userData = {
+    username: values.username,
+    email: values.email,
+    password: values.password,
+  };
+  console.log(values);
+  axios.post("api/users", userData).then((response) => {
+    console.log(response);
+  });
+};
 function Register() {
   return (
     <Formik
@@ -13,7 +25,6 @@ function Register() {
         confirmPassword: "",
       }}
       validate={(values) => {
-        console.log(values);
         const errors = {};
         if (!values.username) {
           errors.username = "Required";
@@ -48,6 +59,7 @@ function Register() {
       }}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values);
+        handleSubmit(values);
         setTimeout(() => {
           console.log("Logging in", values);
           setSubmitting(false);
@@ -137,7 +149,12 @@ function Register() {
                   Create Account
                 </button>
               </Form>
-              <Link to="/login">Already have an account?Sign in</Link>
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/login"
+              >
+                Already have an account?Sign in
+              </Link>
             </div>
           </div>
         );

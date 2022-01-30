@@ -1,21 +1,20 @@
 import React from "react";
 import classes from "./HeaderItem.module.css";
 import headerImg from "../../Assets/news_img.jpeg";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 function HeaderItem(props) {
+  const { id, title, img } = props;
   return (
-    <div className={`${classes.container} ${props.className}`}>
-      <img
-        className={classes.headerItem_img}
-        alt="no img"
-        src={headerImg}
-      ></img>
-      <div className={classes.headerItem_info}>
-        <span className={classes.headerItem_title}>
-          Lorem ipsum dolor sit amet
-        </span>
-        <span className={classes.headerItem_date}>1 hour ago</span>
+    <Link className="link" to={`/details/${id}`}>
+      <div className={`${classes.container} ${props.className}`}>
+        <img className={classes.headerItem_img} alt="no img" src={img}></img>
+        <div className={classes.headerItem_info}>
+          <span className={classes.headerItem_title}>{title}</span>
+          <span className={classes.headerItem_date}>1 hour ago</span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

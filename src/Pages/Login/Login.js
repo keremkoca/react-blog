@@ -2,8 +2,22 @@ import classes from "./Login.module.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import * as Yup from "yup";
-
+import axios from "../../utils/axios";
+const handleSubmit = (values) => {
+  const userData = {
+    email: values.email,
+    password: values.password,
+  };
+  console.log(userData);
+  console.log("sending request");
+  axios({
+    method: "post",
+    url: "api/users",
+    data: userData,
+  }).then((response) => {
+    console.log(response);
+  });
+};
 function Login() {
   return (
     <Formik
@@ -29,7 +43,8 @@ function Login() {
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values);
+        console.log("submitting login... ", values);
+        handleSubmit(values);
         setTimeout(() => {
           console.log("Logging in", values);
           setSubmitting(false);
@@ -59,7 +74,6 @@ function Login() {
                   id="email"
                   name="email"
                   type="text"
-                  placeholder="Enter your email"
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -77,7 +91,6 @@ function Login() {
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Enter your password"
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -95,7 +108,12 @@ function Login() {
                   Submit
                 </button>
               </Form>
-              <Link to="/register">Dont have account?Sign up</Link>
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/register"
+              >
+                Dont have account?Sign up
+              </Link>
             </div>
           </div>
         );

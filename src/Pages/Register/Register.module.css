@@ -36,35 +36,6 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  padding: 10px 20px;
-  margin: 20px 0 0 10px;
-  border: none;
-  font-family: "Roboto", sans-serif;
-  background-color: rgba(0, 0, 255, 0.544);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
-  font-size: 20px;
-  cursor: pointer;
-}
-.button:hover {
-  background-color: rgba(64, 127, 235, 0.626);
-  box-shadow: 0px 15px 20px rgba(42, 109, 83, 0.619);
-  transition: all 0.3s ease-in-out;
-  color: #fff;
-}
-
-.button:active {
-  transform: scale(0.9);
-  transition: all 0.2s ease-in-out;
-}
-.button:focus {
-  outline: none;
-}
 .Link {
   margin-top: 10px;
 }
@@ -73,4 +44,38 @@
 }
 .success {
   color: green;
+}
+.button {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 10px 30px;
+  }
 }
