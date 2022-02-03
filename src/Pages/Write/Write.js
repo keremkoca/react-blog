@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Write.module.css";
-import img from "../../Assets/write_img.jpeg";
+import img from "../../Assets/PostImages/write_img.jpeg";
 function Write() {
   return (
     <div className={classes.write}>

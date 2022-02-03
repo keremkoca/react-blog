@@ -2,7 +2,7 @@ import "./mock-data";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
-import React, { useEffect, useState, useContext, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import axios from "./utils/axios";
@@ -11,44 +11,98 @@ import PostDetail from "./Pages/PostDetail/PostDetail";
 import Write from "./Pages/Write/Write";
 import Settings from "./Pages/Settings/Settings";
 const initialState = {
-  isAuthenticated: false,
-  username: null,
-  email: null,
-  avatar: null,
-  posts: [],
+  headerPosts: [],
+  users: [],
+  authenticatedUser: {
+    isAuthenticated: false,
+    username: null,
+    email: null,
+    avatar: null,
+    userID: null,
+    posts: [],
+  },
+};
+
+// @ts-ignore
+const userCreater = (users) => {
+  users = users.map((user) => {
+    return {
+      username: user.username,
+      email: user.email,
+      avatar: user.avatar,
+      userID: user.id,
+      posts: user.posts,
+    };
+  });
 };
 const reducer = (state, action) => {
   switch (action.type) {
+    case "GET_HEADER_POSTS":
+      return {
+        ...state,
+        headerPosts: action.payload,
+      };
+    case "GET_USERS":
+      return {
+        ...state,
+        users: action.payload,
+      };
     case "LOGIN":
       return {
         ...state,
-        isAuthenticated: true,
-        username: action.payload.selectedUser.username,
-        email: action.payload.selectedUser.email,
-        avatar: action.payload.selectedUser.avatar,
+        authenticatedUser: {
+          isAuthenticated: true,
+          userID: action.payload.id,
+          username: action.payload.username,
+          email: action.payload.email,
+          avatar: action.payload.avatar,
+          posts: action.payload.posts,
+        },
+      };
+    case "LOGOUT":
+      return {
+        ...state,
+        authenticatedUser: {
+          isAuthenticated: false,
+          userID: null,
+          username: null,
+          email: null,
+          avatar: null,
+          posts: [],
+        },
       };
 
     default:
       break;
   }
 };
-export const HeaderContext = React.createContext(initialState);
+export const AuthContext = React.createContext(initialState);
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
-    console.log("sending request");
-    axios
-      .get("api/default-posts")
-      .then((response) => setPosts(response.data.posts));
+    axios.get("api/default-posts").then((response) =>
+      // @ts-ignore
+      dispatch({
+        type: "GET_HEADER_POSTS",
+        payload: response.data.posts,
+      })
+    );
+
+    axios.get("api/users").then((response) => {
+      // @ts-ignore
+      dispatch({
+        type: "GET_USERS",
+        payload: response.data,
+      });
+    });
   }, []);
-  console.log(posts);
 
   return (
     <div className="site-wrapper">
-      <HeaderContext.Provider
+      <AuthContext.Provider
+        // @ts-ignore
         value={{
-          posts,
           state,
           dispatch,
         }}
@@ -65,7 +119,7 @@ function App() {
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
-      </HeaderContext.Provider>
+      </AuthContext.Provider>
     </div>
   );
 }

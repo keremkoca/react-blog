@@ -2,7 +2,7 @@ import classes from "./Register.module.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import axios from "axios";
+import axios from "../../utils/axios";
 
 const handleSubmit = (values) => {
   const userData = {
@@ -10,8 +10,13 @@ const handleSubmit = (values) => {
     email: values.email,
     password: values.password,
   };
-  console.log(values);
-  axios.post("api/users", userData).then((response) => {
+  console.log(userData);
+  console.log("sending request");
+  axios({
+    method: "post",
+    url: "api/users/register",
+    data: userData,
+  }).then((response) => {
     console.log(response);
   });
 };
@@ -67,15 +72,7 @@ function Register() {
       }}
     >
       {(props) => {
-        const {
-          values,
-          touched,
-          errors,
-          isSubmitting,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        } = props;
+        const { values, isSubmitting, handleChange, handleBlur } = props;
         return (
           <div className={classes.wrapper}>
             <div className={classes.register}>

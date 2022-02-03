@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import SinglePost from "./SinglePost";
-import { HeaderContext } from "App";
+import { AuthContext } from "App";
 import { useParams } from "react-router-dom";
 
 function PostDetail() {
   let { id } = useParams();
-  const posts = useContext(HeaderContext);
-  const selectedPost = posts.find((post) => id == post.id);
+  const { state } = useContext(AuthContext);
+  const selectedPost = state.headerPosts.find(
+    (post) => id.toString() === post.id.toString()
+  );
 
-  console.log(id, posts, selectedPost);
+  console.log(id, selectedPost, state.headerPosts, state);
   return (
     <div>
       <SinglePost

@@ -1,24 +1,34 @@
 import classes from "./Login.module.css";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 import axios from "../../utils/axios";
-const handleSubmit = (values) => {
-  const userData = {
-    email: values.email,
-    password: values.password,
-  };
-  console.log(userData);
-  console.log("sending request");
-  axios({
-    method: "post",
-    url: "api/users",
-    data: userData,
-  }).then((response) => {
-    console.log(response);
-  });
-};
+import { AuthContext } from "App";
+
 function Login() {
+  const { dispatch } = useContext(AuthContext);
+  let navigate = useNavigate();
+  const handleSubmit = (values) => {
+    const userData = {
+      email: values.email,
+      password: values.password,
+    };
+    console.log(userData);
+    console.log("sending request");
+    axios({
+      method: "post",
+      url: "api/users/login",
+      data: userData,
+    }).then((response) => {
+      console.log(response);
+      dispatch({
+        type: "LOGIN",
+        payload: response.data.currentUser,
+      });
+      navigate("/");
+    });
+  };
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
@@ -52,15 +62,7 @@ function Login() {
       }}
     >
       {(props) => {
-        const {
-          values,
-          touched,
-          errors,
-          isSubmitting,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        } = props;
+        const { values, isSubmitting, handleChange, handleBlur } = props;
 
         return (
           <div className={classes.wrapper}>

@@ -1,7 +1,5 @@
 import React from "react";
 import classes from "./HeaderItem.module.css";
-import headerImg from "../../Assets/news_img.jpeg";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 function HeaderItem(props) {
   const { id, title, img } = props;

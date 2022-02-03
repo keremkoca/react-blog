@@ -1,15 +1,15 @@
 import React from "react";
 import classes from "./Header.module.css";
 import HeaderItem from "./HeaderItem";
-import { HeaderContext } from "App";
+import { AuthContext } from "App";
 import { useContext } from "react";
 function Header() {
-  const { posts } = useContext(HeaderContext);
-  const newPosts = posts.map((post) => {
+  const { state } = useContext(AuthContext);
+  const newPosts = state.headerPosts.map((post) => {
     return (
       <HeaderItem
         className={
-          post.id == 3 ? classes.header_news : classes.header_news_side
+          post.id === "d3" ? classes.header_news : classes.header_news_side
         }
         id={post.id}
         img={post.img}
