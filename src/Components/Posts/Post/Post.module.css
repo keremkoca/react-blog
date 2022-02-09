@@ -46,6 +46,7 @@
 }
 .post_title {
   font-family: "Josefin Sans", sans-serif;
+  overflow: hidden;
   cursor: pointer;
 }
 .postDescription {
@@ -58,4 +59,11 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+.link {
+  text-decoration: none;
+}
+.link:visited {
+  text-decoration: none;
+  color: inherit;
 }

@@ -1,23 +1,29 @@
 import React, { useContext } from "react";
 import SinglePost from "./SinglePost";
-import { AuthContext } from "App";
+import Context from "utils/context";
 import { useParams } from "react-router-dom";
 
 function PostDetail() {
   let { id } = useParams();
-  const { state } = useContext(AuthContext);
-  const selectedPost = state.headerPosts.find(
-    (post) => id.toString() === post.id.toString()
-  );
-
-  console.log(id, selectedPost, state.headerPosts, state);
+  const { statePostsReducer: state } = useContext(Context);
+  const post = state.posts.find((post) => {
+    return !post.featured
+      ? post.id.toString() === id.toString()
+      : post.id.toString() === id.toString();
+  });
+  const user = state.users.find((user) => {
+    return user.id === post.userID;
+  });
   return (
     <div>
       <SinglePost
-        id={selectedPost.id}
-        postImg={selectedPost.img}
-        title={selectedPost.title}
-        description={selectedPost.description}
+        id={post.id}
+        username={post.featured && user.username}
+        userID={post.featured && user.id}
+        name={post.name}
+        postImg={post.img}
+        title={post.title}
+        description={post.description}
       ></SinglePost>
     </div>
   );

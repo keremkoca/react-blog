@@ -5,11 +5,12 @@ import NavMenu from "./NavMenu";
 import NavUser from "./NavUser";
 import NavLink from "./NavLink";
 import { Link } from "react-router-dom";
-import { AuthContext } from "App";
+import Context from "utils/context";
 import "./Navbar.css";
 
 function Navbar() {
-  const { state, dispatch } = useContext(AuthContext);
+  const { stateAuthReducer: state, dispatchAuthReducer: dispatch } =
+    useContext(Context);
   return (
     <div className="navbar">
       <Nav>
@@ -34,14 +35,14 @@ function Navbar() {
               Contact
             </Link>
           </NavLink>
-          {state.authenticatedUser.isAuthenticated && (
+          {state.isAuthenticated && (
             <NavLink>
               <Link className="link" to="/write">
                 Write
               </Link>
             </NavLink>
           )}
-          {!state.authenticatedUser.isAuthenticated ? (
+          {!state.isAuthenticated ? (
             <NavLink>
               <Link className="link" to="/register">
                 Sign Up

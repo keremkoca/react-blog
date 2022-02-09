@@ -1,22 +1,26 @@
 import React from "react";
 import classes from "./Header.module.css";
 import HeaderItem from "./HeaderItem";
-import { AuthContext } from "App";
+import Context from "utils/context";
 import { useContext } from "react";
 function Header() {
-  const { state } = useContext(AuthContext);
-  const newPosts = state.headerPosts.map((post) => {
-    return (
-      <HeaderItem
-        className={
-          post.id === "d3" ? classes.header_news : classes.header_news_side
-        }
-        id={post.id}
-        img={post.img}
-        title={post.title}
-      ></HeaderItem>
-    );
-  });
+  const { statePostsReducer: state } = useContext(Context);
+  const newPosts = state.posts
+    .filter((post) => {
+      return !post.featured;
+    })
+    .map((post) => {
+      return (
+        <HeaderItem
+          className={
+            post.id === "d3" ? classes.header_news : classes.header_news_side
+          }
+          id={post.id}
+          img={post.img}
+          title={post.title}
+        ></HeaderItem>
+      );
+    });
   return (
     <div className={classes.container}>
       <div className={classes.header_container_left}>

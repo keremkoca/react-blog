@@ -4,18 +4,16 @@ import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
 import axios from "../../utils/axios";
-import { AuthContext } from "App";
+import Context from "utils/context";
 
 function Login() {
-  const { dispatch } = useContext(AuthContext);
+  const { dispatchAuthReducer: dispatch } = useContext(Context);
   let navigate = useNavigate();
   const handleSubmit = (values) => {
     const userData = {
       email: values.email,
       password: values.password,
     };
-    console.log(userData);
-    console.log("sending request");
     axios({
       method: "post",
       url: "api/users/login",
@@ -23,7 +21,10 @@ function Login() {
     }).then((response) => {
       console.log(response);
       dispatch({
-        type: "LOGIN",
+        type: "LOGIN_SUCCESS",
+      });
+      dispatch({
+        type: "GET_USER",
         payload: response.data.currentUser,
       });
       navigate("/");
@@ -33,7 +34,6 @@ function Login() {
     <Formik
       initialValues={{ email: "", password: "" }}
       validate={(values) => {
-        console.log(values);
         const errors = {};
         if (!values.email) {
           errors.email = "Required";

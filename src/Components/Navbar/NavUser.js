@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
 import classes from "./NavUser.module.css";
-import user from "../../Assets/UserAvatars/user.png";
 import { Link } from "react-router-dom";
-import { AuthContext } from "App";
+import Context from "utils/context";
+const siteURL = window.location.href;
 function NavUser() {
-  const { state } = useContext(AuthContext);
+  const { stateAuthReducer: state } = useContext(Context);
+  console.log(state.avatar);
   return (
     <div className={classes.container}>
       <Link to="/settings">
         <img
           className={classes.userImg}
           alt="userImg"
-          src={state.authenticatedUser.avatar || user}
+          src={state.avatar || `${siteURL}/assets/images/user.png`}
         ></img>
       </Link>
       <i className={`${classes.searchIcon} fas fa-search`}></i>

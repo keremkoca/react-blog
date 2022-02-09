@@ -1,2 +1,2 @@
 import "./users";
-import "./default-posts";
+import "./posts";
