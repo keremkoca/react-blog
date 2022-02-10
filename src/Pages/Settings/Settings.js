@@ -6,6 +6,7 @@ const siteURL = window.location.href;
 function Settings() {
   const { stateAuthReducer: state, dispatchAuthReducer: dispatch } =
     useContext(Context);
+
   const [user, setUser] = useState({
     isAuthenticated: state.isAuthenticated,
     id: state.id,
@@ -14,6 +15,7 @@ function Settings() {
     avatar: state.avatar,
     password: "",
   });
+  console.log(user, state);
   const handleOnEditSubmit = (event) => {
     event.preventDefault();
     console.log("editting", state.id);
@@ -94,22 +96,24 @@ function Settings() {
             type="Password"
             value={user.password || ""}
           ></input>
-          <div className={classes.settings_btn_container}>
-            <button
-              name="editBtn"
-              type="submit"
-              className={classes.settingsBtn}
-            >
-              Update Profile
-            </button>
-            <button
-              name="deleteBtn"
-              type="submit"
-              className={classes.settingsDeleteBtn}
-            >
-              Delete Profile
-            </button>
-          </div>
+          {state.isAuthenticated && (
+            <div className={classes.settings_btn_container}>
+              <button
+                name="editBtn"
+                type="submit"
+                className={classes.settingsBtn}
+              >
+                Update Profile
+              </button>
+              <button
+                name="deleteBtn"
+                type="submit"
+                className={classes.settingsDeleteBtn}
+              >
+                Delete Profile
+              </button>
+            </div>
+          )}
         </form>
       </div>
     </div>

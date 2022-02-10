@@ -1,7 +1,5 @@
 // @ts-nocheck
 import mock from "../utils/mock";
-
-import { useParams } from "react-router-dom";
 const siteURL = window.location.href;
 let users = [
   {
@@ -86,26 +84,28 @@ mock.onPost("api/users/register").reply((config) => {
 });
 mock.onPatch(`api/users`).reply((config) => {
   let { username, email, avatar, password, id } = JSON.parse(config.data);
-  console.log(config, email, password);
   return new Promise((resolve, reject) => {
+    let updatedUser = null;
     setTimeout(() => {
       let hasUser = users.some((user) => {
         if (id === user.id.toString()) {
-          user = {
+          console.log(user);
+          updatedUser = JSON.parse(JSON.stringify(user));
+          updatedUser = {
             id: id.toString(),
             username: username,
             email: email,
             password: password,
             avatar: avatar,
           };
-
-          return true;
+          console.log(user);
+          return updatedUser;
         }
         return user;
       });
 
       if (hasUser) {
-        resolve([200, { code: 200, msg: "success" }]);
+        resolve([200, { code: 200, msg: "success", updatedUser }]);
       } else {
         reject([500, { code: 500, msg: "failed" }]);
       }

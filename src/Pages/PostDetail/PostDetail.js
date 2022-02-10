@@ -23,6 +23,7 @@ function PostDetail() {
         name={post.name}
         postImg={post.img}
         title={post.title}
+        createdAt={post.createdAt}
         description={post.description}
       ></SinglePost>
     </div>

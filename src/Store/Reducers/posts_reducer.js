@@ -31,6 +31,18 @@ export const PostsReducer = (state = initialState, action) => {
           },
         ],
       };
+    case "EDIT_POST":
+      [...state.posts].map((post) => {
+        if (post.id === action.payload.id) {
+          post.createdAt = new Date().toISOString();
+          post.title = action.payload.title;
+          post.description = action.payload.description;
+        }
+        return post;
+      });
+      return {
+        ...state,
+      };
 
     default:
       return state;

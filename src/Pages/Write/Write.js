@@ -14,7 +14,7 @@ function Write() {
     userID: authState.id,
     id: Date.now(),
     img: null,
-    createdAt:'',
+    createdAt: "",
     title: "",
     description: "",
   });

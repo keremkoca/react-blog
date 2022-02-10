@@ -39,7 +39,6 @@ export const AuthReducer = (state = initialState, action) => {
     case "EDIT_USER":
       return {
         ...state,
-        id: action.payload.id,
         username: action.payload.username,
         email: action.payload.email,
         avatar: action.payload.avatar,

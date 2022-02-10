@@ -9,7 +9,6 @@ function HeaderItem(props) {
         <img className={classes.headerItem_img} alt="no img" src={img}></img>
         <div className={classes.headerItem_info}>
           <span className={classes.headerItem_title}>{title}</span>
-          <span className={classes.headerItem_date}>1 hour ago</span>
         </div>
       </div>
     </Link>

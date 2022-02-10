@@ -24,6 +24,7 @@
   height: 300px;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 .settings_img_select {
@@ -38,9 +39,8 @@
   border: 5px dashed black;
 }
 .userImg {
-  width: 150px;
-  height: 150px;
-  margin: 0 10px;
+  width: 100%;
+  height: 300px;
   border-radius: 5px;
   object-fit: cover;
 }
