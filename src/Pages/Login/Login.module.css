@@ -5,7 +5,6 @@
   font-size: 18px;
   padding-top: 40px;
   position: relative;
-  height: 600px;
 }
 .login {
   display: flex;
@@ -13,11 +12,18 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.59);
+  /* border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.59); */
   width: 400px;
 }
-
+.h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+  color: rgba(8, 8, 8, 0.9);
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -27,13 +33,20 @@
 .field {
   height: 2rem;
   font-size: 1.5rem;
+  border: none;
+  border-bottom: 1px solid rgb(41, 41, 41, 0.5);
 }
 .field:focus {
   outline: none;
 }
 .label {
-  margin: 10px 0;
-  font-size: 20px;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  font-size: 15px;
+  font-weight: 400px;
+  line-height: 20px;
 }
 
 .Link {
@@ -43,10 +56,9 @@
   color: red;
 }
 
-
 .button {
-  background-color: #13aa52;
-  border: 1px solid #13aa52;
+  background-color: rgb(25, 25, 25, 0.9);
+  border: 1px solid rgb(25, 25, 25);
   border-radius: 4px;
   margin-top: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
@@ -69,6 +81,7 @@
 }
 
 .button:hover {
+  background-color: rgb(25, 25, 25, 1);
   box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
   transform: translateY(-2px);
 }

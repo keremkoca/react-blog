@@ -27,6 +27,7 @@ function Posts() {
                   key={Math.random()}
                   userID={user.id}
                   title={post.title}
+                  username={user.username}
                   createdAt={post.createdAt}
                   description={post.description}
                   img={post.img}

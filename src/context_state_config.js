@@ -15,6 +15,7 @@ const ContextState = (props) => {
     PostsReducer.PostsReducer,
     PostsReducer.initialState
   );
+
   useEffect(() => {
     axios.get("api/posts").then((response) =>
       dispatchPostsReducer({

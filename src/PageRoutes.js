@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
@@ -8,7 +8,23 @@ import Register from "./Pages/Register/Register";
 import PostDetail from "./Pages/PostDetail/PostDetail";
 import Write from "./Pages/Write/Write";
 import Settings from "./Pages/Settings/Settings";
+
 function PageRoutes() {
+  const [showFooter, setShowFooter] = useState(false);
+  const handleScroll = (e) => {
+    if (
+      window.innerHeight + e.target.documentElement.scrollTop + 1 >=
+      e.target.documentElement.scrollHeight
+    ) {
+      console.log("at the bottom");
+      setShowFooter(true);
+    } else {
+      setShowFooter(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div>
       <BrowserRouter>
@@ -21,7 +37,7 @@ function PageRoutes() {
           <Route path="/register" element={<Register />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
-        <Footer></Footer>
+        {showFooter && <Footer></Footer>}
       </BrowserRouter>
     </div>
   );

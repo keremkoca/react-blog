@@ -12,17 +12,24 @@
   align-items: center;
   justify-content: center;
   align-self: center;
+  border-left: 1px solid rgba(230, 230, 230, 1);
+  border-right: 1px solid rgba(230, 230, 230, 1);
 }
 .posts_title_container {
   display: flex;
   justify-content: flex-start;
   align-self: center;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .posts_title {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 2;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgba(41, 41, 41, 1);
+  letter-spacing: 0.083em;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 16px;
 }
 .posts_row {
   display: flex;

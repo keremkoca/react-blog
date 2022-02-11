@@ -10,11 +10,18 @@
 .postInfo {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+.post_user_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .postImg {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .postImg img {
   border-radius: 3px;
@@ -28,12 +35,26 @@
   object-fit: cover;
 }
 .postDate {
-  margin-left: 10px;
+  color: rgba(117, 117, 117, 1);
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  margin-right: 5px;
+  display: flex;
+}
+.post_username {
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 5px;
 }
 .post_details {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -45,15 +66,27 @@
   width: 300px;
 }
 .post_title {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgba(41, 41, 41, 1);
+  font-size: 20px;
+  font-weight: 700px;
+  line-height: 28px;
+  width: 300px;
+  text-indent: 2px;
+  letter-spacing: normal;
   overflow: hidden;
   cursor: pointer;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .postDescription {
-  font-family: "Varela Round", sans-serif;
-  font-size: 14px;
-  color: #444;
-  line-height: 22px;
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: 400px;
+  line-height: 24px;
+  color: rgba(117, 117, 117, 1);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

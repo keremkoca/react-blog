@@ -3,7 +3,7 @@ import classes from "./Post.module.css";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 function Post(props) {
-  const { img, title, avatar, id, description, createdAt } = props;
+  const { img, title, avatar, id, description, username, createdAt } = props;
 
   return (
     <Link className={classes.link} to={`/details/${id}`}>
@@ -15,11 +15,14 @@ function Post(props) {
           <h3 className={classes.post_title}>{title}</h3>
           <div className={classes.userInfo}>
             <div className={classes.post_details}>
-              <img
-                className={classes.user_img}
-                alt="userImg"
-                src={avatar}
-              ></img>
+              <div className={classes.post_user_container}>
+                <img
+                  className={classes.user_img}
+                  alt="userImg"
+                  src={avatar}
+                ></img>
+                <span className={classes.post_username}>{username}</span>
+              </div>
               <div className={classes.postDate}>
                 <Moment fromNow>{createdAt}</Moment>
               </div>

@@ -40,15 +40,27 @@
   justify-content: space-between;
   width: 100%;
 }
+.post_user_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user_img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .postInfo {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
 }
 .post_username {
   font-family: "Lora", serif;
   color: rgb(52, 52, 52);
   float: left;
+  margin-left: 10px;
 }
 .post_date {
   margin-left: 20px;
@@ -94,8 +106,10 @@
 }
 .post_description {
   color: #666;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 20px;
+  font-weight: 400px;
+  line-height: 25px;
 }
 .post_description_input {
   margin-top: 20px;
@@ -111,9 +125,9 @@
 }
 .post_description_input::first-letter {
   margin-left: 15px;
-  font-size: 25px;
+  font-size: 40px;
 }
 .post_description::first-letter {
   margin-left: 15px;
-  font-size: 25px;
+  font-size: 40px;
 }

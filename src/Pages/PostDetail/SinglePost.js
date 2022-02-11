@@ -4,8 +4,16 @@ import Context from "utils/context";
 import Moment from "react-moment";
 import { useNavigate } from "react-router-dom";
 function SinglePost(props) {
-  const { postImg, title, description, createdAt, username, id, userID } =
-    props;
+  const {
+    postImg,
+    title,
+    description,
+    createdAt,
+    username,
+    id,
+    userID,
+    avatar,
+  } = props;
   const { stateAuthReducer: state } = useContext(Context);
   const { dispatchPostsReducer: dispatch } = useContext(Context);
   const [isEditing, setIsEditing] = useState(false);
@@ -57,9 +65,14 @@ function SinglePost(props) {
             <div className={classes.infoContainer}>
               <div className={classes.postInfo}>
                 {username && (
-                  <span className={classes.post_username}>
-                    Author : {username}
-                  </span>
+                  <div className={classes.post_user_container}>
+                    <img
+                      className={classes.user_img}
+                      alt="userImg"
+                      src={avatar}
+                    ></img>
+                    <span className={classes.post_username}>{username}</span>
+                  </div>
                 )}
                 {post.createdAt && (
                   <Moment className={classes.post_date} fromNow>

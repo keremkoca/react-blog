@@ -67,6 +67,7 @@ function Login() {
         return (
           <div className={classes.wrapper}>
             <div className={classes.login}>
+              <h2 className={classes.h2}>Login</h2>
               <Form className={classes.form}>
                 <label className={classes.label} htmlFor="email">
                   Email
