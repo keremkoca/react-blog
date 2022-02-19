@@ -8,10 +8,17 @@
 }
 .posts_container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.posts_wrapper {
+  display: flex;
+  width: 960px;
+  justify-content: left;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  align-self: center;
+  padding: 0px 10px 0 10px;
   border-left: 1px solid rgba(230, 230, 230, 1);
   border-right: 1px solid rgba(230, 230, 230, 1);
 }

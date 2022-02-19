@@ -1,6 +1,11 @@
 import mock from "../utils/mock";
-console.log(window.location.href);
+import moment from "moment";
 const siteURL = window.location.href;
+
+let date = moment();
+const h = date.hour();
+const m = date.minute();
+console.log(date, date.set({ minute: m - 5 }).toISOString());
 let posts = [
   {
     featured: false,
@@ -47,7 +52,7 @@ let posts = [
     userID: 1,
     id: 1,
     img: `${siteURL}/assets/images/animal.jpg`,
-    createdAt: new Date("2022-02-09T00:59-0500"),
+    createdAt: date.set({ minute: m - 5 }).toISOString(),
     title: "Flying Whales",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",
@@ -57,7 +62,7 @@ let posts = [
     userID: 1,
     id: 2,
     img: `${siteURL}/assets/images/art.jpg`,
-    createdAt: new Date("2022-02-09T01:59-0500"),
+    createdAt: date.set({ minute: m - 1 }).toISOString(),
     title: "A Creative Perspective",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",
@@ -67,7 +72,7 @@ let posts = [
     userID: 1,
     id: 3,
     img: `${siteURL}/assets/images/food.jpg`,
-    createdAt: new Date("2022-02-09T03:59-0500"),
+    createdAt: date.set({ minute: m - 12 }).toISOString(),
     title: "A new restaurant",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",
@@ -77,7 +82,7 @@ let posts = [
     userID: 2,
     id: 4,
     img: `${siteURL}/assets/images/books.jpg`,
-    createdAt: new Date("2022-02-09T04:59-0500"),
+    createdAt: date.set({ minute: m - 3 }).toISOString(),
     title: "Is ignorance is bliss?",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",
@@ -87,7 +92,7 @@ let posts = [
     userID: 2,
     id: 5,
     img: `${siteURL}/assets/images/tech.jpg`,
-    createdAt: new Date("2022-02-09T05:59-0500"),
+    createdAt: date.set({ minute: m - 5 }).toISOString(),
     title: "Axios interceptors is the best",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",
@@ -97,7 +102,7 @@ let posts = [
     userID: 2,
     id: 6,
     img: `${siteURL}/assets/images/sunset.jpg`,
-    createdAt: new Date("2022-02-09T06:59-0500"),
+    createdAt: date.set({ minute: m - 7 }).toISOString(),
     title: "Sunset from above",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",
@@ -107,7 +112,7 @@ let posts = [
     userID: 3,
     id: 7,
     img: `${siteURL}/assets/images/forest.jpg`,
-    createdAt: new Date("2022-02-09T07:59-0500"),
+    createdAt: date.set({ minute: m - 30 }).toISOString(),
     title: "Destruction of rainforests",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",
@@ -117,7 +122,7 @@ let posts = [
     userID: 3,
     id: 8,
     img: `${siteURL}/assets/images/night.jpg`,
-    createdAt: new Date("2022-02-09T02:59-0500"),
+    createdAt: date.set({ minute: m - 11 }).toISOString(),
     title: "Did you check your bill?",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",
@@ -127,7 +132,7 @@ let posts = [
     userID: 3,
     id: 9,
     img: `${siteURL}/assets/images/sport.jpg`,
-    createdAt: new Date("2022-02-09T02:59-0500"),
+    createdAt: date.set({ minute: m - 4 }).toISOString(),
     title: "A new court is opening",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus",

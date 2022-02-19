@@ -5,7 +5,6 @@ import Context from "utils/context";
 const siteURL = window.location.href;
 function NavUser() {
   const { stateAuthReducer: state } = useContext(Context);
-  console.log(state.avatar);
   return (
     <div className={classes.container}>
       <Link to="/settings">

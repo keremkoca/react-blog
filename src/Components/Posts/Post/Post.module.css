@@ -64,6 +64,7 @@
   justify-content: center;
   align-items: center;
   width: 300px;
+  height: 118px;
 }
 .post_title {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -86,12 +87,17 @@
   font-size: 16px;
   font-weight: 400px;
   line-height: 24px;
+  height: 88px;
+  width: 100%;
   color: rgba(117, 117, 117, 1);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+.postDescription p::first-letter {
+  text-transform: uppercase;
 }
 .link {
   text-decoration: none;

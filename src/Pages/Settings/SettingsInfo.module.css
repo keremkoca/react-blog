@@ -1,0 +1,166 @@
+.form {
+  display: flex;
+  width: 100%;
+}
+.container {
+  display: flex;
+  font-family: -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue",
+    sans-serif;
+  letter-spacing: 0;
+  width: 100%;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.4;
+  padding-top: 30px;
+  padding-bottom: 35px;
+  text-align: left;
+  padding: 35px 0 30px 0;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.84);
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+}
+.infoTitle {
+  color: black;
+  font-size: 21px;
+  font-weight: 700px;
+  line-height: 24px;
+}
+.info_description_container {
+  margin-top: 15px;
+}
+.user_input {
+  border: none;
+  padding: 0px;
+  padding-bottom: 5px;
+  font-size: 18px;
+  font-weight: 400px;
+  width: 400px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.84);
+  font-family: -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+.user_avatar_container {
+  position: relative;
+  height: 80px;
+  width: 80px;
+}
+.user_avatar_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 16px;
+  font-weight: 400px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+.user_avatar_overlay i {
+  font-size: 40px;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  font-weight: 400px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.user_avatar_overlay i:hover {
+  color: rgba(255, 255, 255, 1);
+}
+.user_avatar {
+  font-size: 16px;
+  font-weight: 400px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+.user_input:disabled {
+  background-color: white;
+}
+:focus {
+  outline: none;
+}
+.text-box {
+  color: aliceblue;
+}
+.btnContainer {
+  display: flex;
+}
+.editBtn {
+  font-family: -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue",
+    sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.01);
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  font-weight: 400px;
+  height: 37px;
+  line-height: 37px;
+  padding: 0 16px 0 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+}
+.editBtn:hover {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.8);
+}
+.cancelBtn {
+  font-family: -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue",
+    sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.01);
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  font-weight: 400px;
+  height: 37px;
+  line-height: 37px;
+  padding: 0 16px 0 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+}
+.cancelBtn:hover {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.8);
+}
+.saveBtn {
+  font-family: -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue",
+    sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.01);
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  font-weight: 400px;
+  height: 37px;
+  line-height: 37px;
+  padding: 0 16px 0 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+.saveBtn:hover {
+  border-color: #1a8917;
+  border: 1px solid #1a8917;
+  color: #1a8917;
+}

@@ -43,6 +43,19 @@ export const PostsReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+    case "EDIT_USER":
+      [...state.users].map((user) => {
+        if (user.id === action.payload.id) {
+          user.username = action.payload.username;
+          user.email = action.payload.email;
+          user.avatar = action.payload.avatar;
+        }
+        console.log(user);
+        return user;
+      });
+      return {
+        ...state,
+      };
 
     default:
       return state;

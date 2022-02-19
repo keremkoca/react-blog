@@ -4,7 +4,6 @@ import Post from "./Post/Post";
 import Context from "utils/context";
 function Posts() {
   const { statePostsReducer: state } = useContext(Context);
-
   const sortedPosts = state.posts.sort((a, b) => {
     a = new Date(a.createdAt);
     b = new Date(b.createdAt);
@@ -13,11 +12,11 @@ function Posts() {
 
   return (
     <div className={classes.posts}>
+      <div className={classes.posts_container}></div>
       <div className={classes.posts_title_container}>
         <h1 className={classes.posts_title}>Recent Posts</h1>
       </div>
-
-      <div className={classes.posts_container}>
+      <div className={classes.posts_wrapper}>
         {sortedPosts.map((post) => {
           return state.users.map((user) => {
             if (user.id === post.userID) {

@@ -16,7 +16,6 @@ function PageRoutes() {
       window.innerHeight + e.target.documentElement.scrollTop + 1 >=
       e.target.documentElement.scrollHeight
     ) {
-      console.log("at the bottom");
       setShowFooter(true);
     } else {
       setShowFooter(false);

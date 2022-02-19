@@ -26,7 +26,6 @@ const ContextState = (props) => {
 
     axios.get("api/users").then((response) => {
       // @ts-ignore
-      console.log(response.data);
       dispatchPostsReducer({
         type: "GET_USERS",
         payload: response.data,
