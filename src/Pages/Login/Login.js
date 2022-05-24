@@ -19,7 +19,6 @@ function Login() {
       url: "api/users/login",
       data: userData,
     }).then((response) => {
-      console.log(response);
       dispatch({
         type: "LOGIN_SUCCESS",
       });
@@ -53,10 +52,8 @@ function Login() {
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log("submitting login... ", values);
         handleSubmit(values);
         setTimeout(() => {
-          console.log("Logging in", values);
           setSubmitting(false);
         }, 500);
       }}

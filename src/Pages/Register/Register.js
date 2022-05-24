@@ -11,14 +11,11 @@ function Register() {
       email: values.email,
       password: values.password,
     };
-    console.log(userData);
-    console.log("sending request");
     axios({
       method: "post",
       url: "api/users/register",
       data: userData,
     }).then((response) => {
-      console.log(response.status);
       response.status === 200 && setIsSucces(true);
     });
   };
@@ -65,10 +62,8 @@ function Register() {
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values);
         handleSubmit(values);
         setTimeout(() => {
-          console.log("Logging in", values);
           setSubmitting(false);
         }, 500);
       }}

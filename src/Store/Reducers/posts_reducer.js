@@ -50,7 +50,6 @@ export const PostsReducer = (state = initialState, action) => {
           user.email = action.payload.email;
           user.avatar = action.payload.avatar;
         }
-        console.log(user);
         return user;
       });
       return {

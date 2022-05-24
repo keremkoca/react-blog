@@ -30,14 +30,12 @@ function SettingsInfo(props) {
     email: state.email,
     avatar: state.avatar,
   });
-  console.log(inputArea.current);
   const handleOnChange = (event) => {
     if (type === "avatar") {
-      console.log("girdi");
       setInputValue(`${URL.createObjectURL(event.target.files[0])}`);
       setUser({
         ...user,
-        [type]: inputValue,
+        [type]: `${URL.createObjectURL(event.target.files[0])}`,
       });
     } else if (type === "name") {
       setInputValue(event.target.value);
@@ -55,13 +53,11 @@ function SettingsInfo(props) {
   };
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log("submitted");
     axios({
       method: "patch",
       url: `api/users`,
       data: user,
     }).then((response) => {
-      console.log(response);
       dispatch({
         type: "EDIT_USER",
         payload: user,
