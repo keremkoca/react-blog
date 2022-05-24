@@ -5,7 +5,6 @@ const siteURL = window.location.href;
 let date = moment();
 const h = date.hour();
 const m = date.minute();
-console.log(date, date.set({ minute: m - 5 }).toISOString());
 let posts = [
   {
     featured: false,

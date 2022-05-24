@@ -1,26 +1,28 @@
 import classes from "./Register.module.css";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import axios from "../../utils/axios";
 
-const handleSubmit = (values) => {
-  const userData = {
-    username: values.username,
-    email: values.email,
-    password: values.password,
-  };
-  console.log(userData);
-  console.log("sending request");
-  axios({
-    method: "post",
-    url: "api/users/register",
-    data: userData,
-  }).then((response) => {
-    console.log(response);
-  });
-};
 function Register() {
+  const handleSubmit = (values) => {
+    const userData = {
+      username: values.username,
+      email: values.email,
+      password: values.password,
+    };
+    console.log(userData);
+    console.log("sending request");
+    axios({
+      method: "post",
+      url: "api/users/register",
+      data: userData,
+    }).then((response) => {
+      console.log(response.status);
+      response.status === 200 && setIsSucces(true);
+    });
+  };
+  const [isSucces, setIsSucces] = useState(false);
   return (
     <Formik
       initialValues={{
@@ -150,7 +152,9 @@ function Register() {
                 style={{ textDecoration: "none", color: "inherit" }}
                 to="/login"
               >
-                Already have an account?Sign in
+                {isSucces
+                  ? "Account Succesfully Created"
+                  : "Already have an account?Sign in"}
               </Link>
             </div>
           </div>

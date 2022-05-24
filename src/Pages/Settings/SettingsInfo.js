@@ -33,12 +33,12 @@ function SettingsInfo(props) {
   console.log(inputArea.current);
   const handleOnChange = (event) => {
     if (type === "avatar") {
+      console.log("girdi");
       setInputValue(`${URL.createObjectURL(event.target.files[0])}`);
       setUser({
         ...user,
-        [type]: `${inputValue}`,
+        [type]: inputValue,
       });
-      console.log(user);
     } else if (type === "name") {
       setInputValue(event.target.value);
       setUser({
@@ -55,7 +55,7 @@ function SettingsInfo(props) {
   };
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log("submitted", user, "<=user", inputValue, "<=inputvalue");
+    console.log("submitted");
     axios({
       method: "patch",
       url: `api/users`,
@@ -73,8 +73,6 @@ function SettingsInfo(props) {
       setIsEditing(false);
     });
   };
-  console.log([type]);
-  console.log("submitted", inputValue);
   return (
     <form onSubmit={handleOnSubmit} className={classes.form}>
       <div className={classes.container}>
@@ -133,7 +131,7 @@ function SettingsInfo(props) {
             type="button"
             onClick={() => {
               setIsEditing(!isEditing);
-              inputArea.current.focus();
+              !inputArea.current === null && inputArea.current.focus();
             }}
             className={!isEditing ? classes.editBtn : classes.cancelBtn}
             disabled={!user.isAuthenticated}

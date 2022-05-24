@@ -39,7 +39,6 @@ function SinglePost(props) {
     setIsEditing(false);
     navigate("/");
   };
-  console.log(post.createdAt);
   return (
     <div className={classes.singlePost}>
       <div className={classes.container}>
