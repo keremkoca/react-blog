@@ -14,7 +14,6 @@ function NavUser() {
           src={state.avatar || `${siteURL}/assets/images/user.png`}
         ></img>
       </Link>
-      <i className={`${classes.searchIcon} fas fa-search`}></i>
     </div>
   );
 }

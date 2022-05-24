@@ -1,14 +1,18 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import classes from "./SettingsInfo.module.css";
 import Context from "utils/context";
 import axios from "utils/axios";
+const siteURL = window.location.href;
+
 const initialTypes = {
-  name: "name",
-  email: "your mail",
-  password: "password",
-  avatar: "photo",
+  name: "Name",
+  email: "Your mail",
+  password: "Password",
+  avatar: "Photo",
 };
 function SettingsInfo(props) {
+  const inputArea = useRef(null);
+
   const { value, type } = props;
 
   const {
@@ -26,7 +30,7 @@ function SettingsInfo(props) {
     email: state.email,
     avatar: state.avatar,
   });
-
+  console.log(inputArea.current);
   const handleOnChange = (event) => {
     if (type === "avatar") {
       setInputValue(`${URL.createObjectURL(event.target.files[0])}`);
@@ -66,6 +70,7 @@ function SettingsInfo(props) {
         type: "GET_USER",
         payload: user,
       });
+      setIsEditing(false);
     });
   };
   console.log([type]);
@@ -81,7 +86,10 @@ function SettingsInfo(props) {
               <div className={classes.info_text}>
                 {type === "avatar" ? (
                   <div className={classes.user_avatar_container}>
-                    <img className={classes.user_avatar} src={inputValue}></img>
+                    <img
+                      className={classes.user_avatar}
+                      src={inputValue || `${siteURL}/assets/images/user.png`}
+                    ></img>
                     {isEditing && (
                       <div className={classes.user_avatar_overlay}>
                         <input
@@ -103,6 +111,8 @@ function SettingsInfo(props) {
                     placeholder={!inputValue ? "******" : state.password}
                     disabled={!isEditing}
                     onChange={handleOnChange}
+                    autoFocus={true}
+                    ref={inputArea}
                   ></input>
                 )}
               </div>
@@ -111,14 +121,22 @@ function SettingsInfo(props) {
         </div>
         <div className={classes.btnContainer}>
           {isEditing && (
-            <button type="submit" className={classes.saveBtn}>
+            <button
+              type="submit"
+              className={classes.saveBtn}
+              disabled={!user.isAuthenticated}
+            >
               Save
             </button>
           )}
           <button
             type="button"
-            onClick={() => setIsEditing(!isEditing)}
+            onClick={() => {
+              setIsEditing(!isEditing);
+              inputArea.current.focus();
+            }}
             className={!isEditing ? classes.editBtn : classes.cancelBtn}
+            disabled={!user.isAuthenticated}
           >
             {isEditing ? "Cancel" : "Edit"}
           </button>
