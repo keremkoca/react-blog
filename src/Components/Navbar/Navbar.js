@@ -25,8 +25,13 @@ function Navbar() {
               Home
             </Link>
           </NavLink>
+
           <NavLink>
-            <Link className="link" to="/about">
+            <Link
+              style={{ textDecoration: "none" }}
+              className="link"
+              to="/about"
+            >
               About
             </Link>
           </NavLink>
